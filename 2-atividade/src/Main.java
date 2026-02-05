@@ -1,15 +1,126 @@
+import java.util.ArrayList;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    private static ArrayList<Aluno> listaAlunos = new ArrayList<>();
+    private static ArrayList<Turma> listaTurmas = new ArrayList<>();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+    public static void main(String[] args) {
+        while (true) {
+            menuPrincipal();
+        }
+    }
+
+    static public void menuPrincipal(){
+        System.out.println("==== Secretaria ====");
+        System.out.println("1 - Alunos\n2 - Turmas\n0 - Sair");
+        String opcao = Leitura.dados("Digite a opção desejada: ");
+        switch (opcao){
+            case "1":
+                menuAlunos();
+                break;
+            case "2":
+                menuTurmas();
+                break;
+            case "0":
+                System.out.println("Até breve...");
+                System.exit(0);
+            default:
+                System.out.println("Opção inválida! Tente novamente");
+                break;
+        }
+
+    }
+
+    private static void menuTurmas() {
+        System.out.println("==== Turmas ====");
+        System.out.println("1 - Listar Turmas");
+        System.out.println("2 - Cadastrar Turma");
+        System.out.println("3 - Atualizar Turma");
+        System.out.println("4 - Excluir Turma");
+        System.out.println("0 - Voltar ao menu principal");
+        String opcao = Leitura.dados("Digite a opção desejada: ");
+        switch (opcao){
+            case "1":
+                listarTurmas();
+                break;
+            case "2":
+                cadastrarTurma();
+                break;
+            case "3":
+                atualizarTurma();
+                break;
+            case "4":
+                excluirTurma();
+                break;
+            case "0":
+                menuPrincipal();
+                break;
+            default:
+                System.out.println("Opção inválida! Tente novamente");
+                break;
+        }
+    }
+
+    private static void menuAlunos() {
+        System.out.println("==== Alunos ====");
+        System.out.println("1 - Listar Alunos");
+        System.out.println("2 - Cadastrar Aluns");
+        System.out.println("3 - Atualizar Aluno");
+        System.out.println("4 - Excluir Aluno");
+        System.out.println("0 - Voltar ao menu principal");
+        String opcao = Leitura.dados("Digite a opção desejada: ");
+        switch (opcao){
+            case "1":
+                listarAlunos();
+                break;
+            case "2":
+                cadatrarAluno();
+                break;
+            case "3":
+                atualizarAluno();
+                break;
+            case "4":
+                excluirTurma();
+                break;
+            case "0":
+                menuPrincipal();
+                break;
+            default:
+                System.out.println("Opção inválida! Tente novamente");
+                break;
+        }
+    }
+
+    private static void atualizarTurma() {
+    }
+
+    private static void cadastrarTurma() {
+        
+    }
+
+    private static void listarTurmas() {
+        for (Turma turma : listaTurmas){
+            System.out.println(turma);
+        }
+    }
+
+    private static void excluirTurma() {
+        
+    }
+
+    private static void atualizarAluno() {
+        
+    }
+
+    private static void cadatrarAluno() {
+        
+    }
+
+    private static void listarAlunos() {
+        for (Aluno alunos : listaAlunos){
+            System.out.println(alunos);
         }
     }
 }
